@@ -100,7 +100,9 @@ class Board:
 
 def get_mouse_cell():
     mousepos = pg.mouse.get_pos()
-    return mousepos[0] // tilesize, mousepos[1] // tilesize
+    x,y = mousepos[0] // tilesize, mousepos[1] // tilesize
+    x,y = min(x,boardsize[0]-1),min(y,boardsize[1]-1)
+    return x,y
 
 
 def main():
